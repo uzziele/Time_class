@@ -84,6 +84,23 @@ Timme& Timme::operator+=(const Timme &timme2)
     return *this;
 }
 
+
+Timme operator+(Timme const& timme, int minutes)
+{
+    Timme copie(timme);
+    copie += minutes;
+    return copie;
+}
+
+Timme& Timme::operator+=(int minutes)
+{
+    m_minutes += minutes;
+    m_hours += m_minutes / 60;
+    m_minutes %= 60;
+
+    return *this;
+}
+
 void Timme::verify() const
 {
     cout << m_hours << "h" << m_minutes << "m" << m_seconds << "s" << endl;

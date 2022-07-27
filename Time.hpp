@@ -10,6 +10,7 @@ class Timme
         bool isEqual(Timme const& a) const;
         bool isLessThan(Timme const& b) const;
         Timme& operator+=(const Timme &timme);
+        Timme& operator+=(int minutes);
         void verify() const;
 
     private:
@@ -23,5 +24,6 @@ bool operator==(Timme const& a, Timme const& b);
 bool operator!=(Timme const& a, Timme const& b);
 bool operator<(Timme const& a, Timme const& b);
 Timme operator+(Timme const& a, Timme const& b);
+Timme operator+(Timme const& timme, int minutes);
 
 #endif // DEF_TIME
